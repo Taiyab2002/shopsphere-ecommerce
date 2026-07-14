@@ -1,0 +1,83 @@
+.shop-banner{
+    background: linear-gradient(135deg,#eef4ff,#ffffff);
+    padding:90px 0;
+}
+
+.shop-banner h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:15px;
+}
+
+.shop-banner p{
+    color:#6c757d;
+    font-size:1.1rem;
+}
+
+.form-control,
+.form-select{
+    height:52px;
+    border-radius:12px;
+    border:1px solid #dfe3e8;
+    box-shadow:none !important;
+}
+
+.form-control:focus,
+.form-select:focus{
+    border-color:#0d6efd;
+}
+
+.product-card{
+    border:none;
+    border-radius:18px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.product-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.15);
+}
+
+.product-card img{
+    height:220px;
+    object-fit:contain;
+    padding:25px;
+    transition:.4s;
+}
+
+.product-card:hover img{
+    transform:scale(1.08);
+}
+
+.product-card .card-title{
+    font-weight:600;
+    margin-bottom:8px;
+}
+
+.product-card .text-muted{
+    font-size:18px;
+    font-weight:600;
+}
+
+.product-card .btn{
+    border-radius:30px;
+    padding:12px;
+    font-weight:600;
+}
+
+.pagination .page-link{
+    border-radius:8px;
+    margin:0 4px;
+    color:#0d6efd;
+}
+
+.pagination .page-item.active .page-link{
+    background:#0d6efd;
+    border-color:#0d6efd;
+}
+
+footer{
+    margin-top:60px;
+}
