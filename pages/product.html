@@ -27,7 +27,10 @@
             ShopSphere
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menu">
 
             <span class="navbar-toggler-icon"></span>
 
@@ -46,15 +49,9 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Categories</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link active" href="#">
+                        Product
+                    </a>
                 </li>
 
             </ul>
@@ -69,8 +66,18 @@
                     <i class="far fa-heart"></i>
                 </a>
 
-                <a href="#" class="text-dark">
+                <a href="cart.html"
+                   class="text-dark position-relative">
+
                     <i class="fas fa-shopping-cart"></i>
+
+                    <span id="cart-count"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                        0
+
+                    </span>
+
                 </a>
 
             </div>
@@ -83,112 +90,116 @@
 
 <section class="product-details py-5">
 
-    <div class="container">
+<div class="container">
 
-        <div class="row align-items-center">
+<div class="row align-items-center">
 
-            <div class="col-lg-6">
+<div class="col-lg-6 text-center">
 
-                <img src="../assets/images/undraw_watch_application_uhc9.svg"
-                     class="img-fluid product-image"
-                     alt="Product">
+<img id="product-image"
+     src=""
+     class="img-fluid product-image"
+     alt="Product">
 
-            </div>
+</div>
 
-            <div class="col-lg-6">
+<div class="col-lg-6">
 
-                <h1 class="mb-3">
-                    Premium Smart Watch
-                </h1>
+<h1 id="product-name" class="mb-3">
 
-                <div class="mb-3 text-warning">
+Loading...
 
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
+</h1>
+<div class="mb-3 text-warning">
 
-                    <span class="text-dark ms-2">
-                        4.8 (125 Reviews)
-                    </span>
+    <span id="product-rating"></span>
 
-                </div>
+    <span id="product-review"
+          class="text-dark ms-2">
 
-                <h2 class="text-primary mb-4">
-                    $89.99
-                </h2>
+    </span>
 
-                <p class="text-muted mb-4">
+</div>
 
-                    Premium quality smartwatch with AMOLED display,
-                    heart rate monitoring,
-                    GPS,
-                    Bluetooth calling,
-                    water resistance and
-                    7-day battery backup.
+<h2 id="product-price"
+    class="text-primary mb-4">
 
-                </p>
+</h2>
 
-                <div class="d-flex align-items-center mb-4">
+<p id="product-description"
+   class="text-muted mb-4">
 
-                    <label class="me-3 fw-bold">
-                        Quantity
-                    </label>
+</p>
 
-                    <div class="input-group quantity-box">
+<div class="mb-4">
 
-                        <button
-                            class="btn btn-outline-secondary"
-                            type="button"
-                            id="decreaseQty">
-                            -
-                        </button>
+    <strong>Brand:</strong>
 
-                        <input
-                            type="text"
-                            id="quantity"
-                            class="form-control text-center"
-                            value="1"
-                            readonly>
+    <span id="product-brand"></span>
 
-                        <button
-                            class="btn btn-outline-secondary"
-                            type="button"
-                            id="increaseQty">
-                            +
-                        </button>
+</div>
 
-                    </div>
+<div class="d-flex align-items-center mb-4">
 
-                </div>
+    <label class="me-3 fw-bold">
 
-                <div class="d-flex gap-3">
+        Quantity
 
-                    <button class="btn btn-primary">
+    </label>
 
-                        <i class="fas fa-shopping-cart"></i>
+    <div class="quantity-box d-flex">
 
-                        Add to Cart
+        <button id="minus-btn"
+                class="btn btn-outline-secondary">
 
-                    </button>
+            -
 
-                    <button class="btn btn-dark">
+        </button>
 
-                        Buy Now
+        <input
+            id="quantity"
+            type="number"
+            value="1"
+            min="1"
+            class="form-control text-center">
 
-                    </button>
+        <button id="plus-btn"
+                class="btn btn-outline-secondary">
 
-                </div>
+            +
 
-            </div>
-
-        </div>
+        </button>
 
     </div>
 
-</section>
+</div>
 
+<div class="d-flex gap-3">
+
+    <button id="add-cart-btn"
+            class="btn btn-primary">
+
+        <i class="fas fa-shopping-cart"></i>
+
+        Add to Cart
+
+    </button>
+
+    <button class="btn btn-dark">
+
+        Buy Now
+
+    </button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
 <section class="pb-5">
 
     <div class="container">
@@ -198,20 +209,19 @@
             <div class="col-lg-8">
 
                 <h3 class="mb-3">
+
                     Product Description
+
                 </h3>
 
-                <p class="text-muted">
-
-                    This premium smartwatch combines elegant design with cutting-edge technology.
-                    It features an AMOLED display, Bluetooth calling, heart rate monitoring,
-                    sleep tracking, GPS, multiple sports modes and a long-lasting battery.
-                    It is designed for fitness enthusiasts, professionals and everyday users.
+                <p id="full-description" class="text-muted">
 
                 </p>
 
                 <h4 class="mt-5 mb-3">
+
                     Specifications
+
                 </h4>
 
                 <table class="table table-bordered">
@@ -219,43 +229,43 @@
                     <tbody>
 
                         <tr>
+
                             <th>Brand</th>
-                            <td>ShopSphere</td>
+
+                            <td id="spec-brand"></td>
+
                         </tr>
 
                         <tr>
-                            <th>Model</th>
-                            <td>SS-WATCH X1</td>
+
+                            <th>Category</th>
+
+                            <td id="spec-category"></td>
+
                         </tr>
 
                         <tr>
-                            <th>Display</th>
-                            <td>1.78" AMOLED</td>
+
+                            <th>Rating</th>
+
+                            <td id="spec-rating"></td>
+
                         </tr>
 
                         <tr>
-                            <th>Battery Life</th>
-                            <td>Up to 7 Days</td>
+
+                            <th>Reviews</th>
+
+                            <td id="spec-reviews"></td>
+
                         </tr>
 
                         <tr>
-                            <th>Water Resistance</th>
-                            <td>IP68 Certified</td>
-                        </tr>
 
-                        <tr>
-                            <th>Connectivity</th>
-                            <td>Bluetooth 5.3</td>
-                        </tr>
+                            <th>Availability</th>
 
-                        <tr>
-                            <th>GPS</th>
-                            <td>Built-in</td>
-                        </tr>
+                            <td>In Stock</td>
 
-                        <tr>
-                            <th>Warranty</th>
-                            <td>12 Months Official Warranty</td>
                         </tr>
 
                     </tbody>
@@ -275,89 +285,26 @@
     <div class="container">
 
         <h2 class="text-center mb-5">
+
             Related Products
+
         </h2>
 
-        <div class="row g-4">
-
-                        <div class="col-lg-4">
-
-                <div class="card product-card h-100">
-
-                    <img src="../assets/images/undraw_smartwatch_74tv.svg" class="card-img-top" alt="Fitness Watch">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title">Fitness Watch</h5>
-
-                        <p class="text-primary fw-bold">$79.99</p>
-
-                        <a href="product.html" class="btn btn-primary w-100">
-                            View Product
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-
-                <div class="card product-card h-100">
-
-                    <img src="../assets/images/undraw_watch_application_uhc9.svg" class="card-img-top" alt="Luxury Watch">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title">Luxury Watch</h5>
-
-                        <p class="text-primary fw-bold">$129.99</p>
-
-                        <a href="product.html" class="btn btn-primary w-100">
-                            View Product
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-4">
-
-                <div class="card product-card h-100">
-
-                    <img src="../assets/images/undraw_in_no_time_6igu.svg" class="card-img-top" alt="Classic Watch">
-
-                    <div class="card-body text-center">
-
-                        <h5 class="card-title">Classic Watch</h5>
-
-                        <p class="text-primary fw-bold">$69.99</p>
-
-                        <a href="product.html" class="btn btn-primary w-100">
-                            View Product
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
+        <div class="row g-4" id="related-products">
 
         </div>
 
     </div>
 
 </section>
-
 <footer class="bg-dark text-white py-4">
 
     <div class="container text-center">
 
         <p class="mb-0">
+
             © 2026 ShopSphere. All Rights Reserved.
+
         </p>
 
     </div>
@@ -367,6 +314,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
 <script src="../assets/js/product.js"></script>
+<script src="../assets/js/product-details.js"></script>
 
 </body>
 
