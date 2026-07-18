@@ -4,6 +4,10 @@ const productId = Number(params.get("id"));
 
 const product = products.find(item => item.id === productId);
 
+console.log("URL:", window.location.href);
+console.log("Product ID:", productId);
+console.log("Products:", products);
+
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let quantity = 1;
@@ -150,8 +154,121 @@ document.getElementById("add-cart-btn").addEventListener("click", () => {
 
     updateCartCount();
 
-    alert(product.name + " added to cart!");
+   showToast(product.name + " added to cart!");
 
 });
 
 updateCartCount();
+const relatedContainer = document.getElementById("related-products");
+
+if (relatedContainer) {
+
+    const relatedProducts = products.filter(item =>
+        item.category === product.category &&
+        item.id !== product.id
+    );
+
+    relatedProducts.slice(0, 3).forEach(item => {
+
+        relatedContainer.innerHTML += `
+
+        <div class="col-lg-4 col-md-6">
+
+            <div class="card product-card h-100">
+
+                <img src="${item.image}"
+                     class="card-img-top"
+                     alt="${item.name}">
+
+                <div class="card-body text-center">
+
+                    <h5 class="card-title">
+
+                        ${item.name}
+
+                    </h5>
+
+                    <p class="text-muted">
+
+                        $${item.price.toFixed(2)}
+
+                    </p>
+
+                    <div class="d-grid gap-2">
+
+                        <a href="product.html?id=${item.id}"
+                           class="btn btn-outline-primary">
+
+                            View Details
+
+                        </a>
+
+                        <button
+                            class="btn btn-primary related-add-cart"
+                            data-id="${item.id}">
+
+                            Add to Cart
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+    document.querySelectorAll(".related-add-cart").forEach(button => {
+
+        button.addEventListener("click", function () {
+
+            const id = Number(this.dataset.id);
+
+            const selectedProduct = products.find(p => p.id === id);
+
+            const existing = cart.find(item => item.id === id);
+
+            if (existing) {
+
+                existing.quantity++;
+
+            } else {
+
+                cart.push({
+
+                    ...selectedProduct,
+                    quantity: 1
+
+                });
+
+            }
+
+            localStorage.setItem("cart", JSON.stringify(cart));
+
+            updateCartCount();
+
+            showToast(selectedProduct.name + " added to cart!");
+
+        });
+
+    });
+
+}
+function showToast(message) {
+
+    const toastMessage = document.getElementById("toast-message");
+
+    toastMessage.textContent = message;
+
+    const toastElement = document.getElementById("cartToast");
+
+    const toast = new bootstrap.Toast(toastElement);
+
+    toast.show();
+
+}
