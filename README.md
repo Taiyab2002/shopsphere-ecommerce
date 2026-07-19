@@ -1,4 +1,4 @@
-# 🛍️ ShopSphere – Modern E-Commerce Website
+#  ShopSphere – Modern E-Commerce Website
 
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -11,13 +11,13 @@ This project was developed as part of a **Web Programming course** and demonstra
 
 ---
 
-## 🌐 Live Demo
+##  Live Demo
 
 🔗 https://shopsphere-taiyab-tusar.netlify.app/
 
 ---
 
-## 📷 Preview
+##  Preview
 
 > Homepage
 
@@ -35,9 +35,9 @@ This project was developed as part of a **Web Programming course** and demonstra
 
 ---
 
-# ✨ Features
+#  Features
 
-### 🏠 Home Page
+###  Home Page
 
 - Modern responsive homepage
 - Hero section
@@ -45,7 +45,7 @@ This project was developed as part of a **Web Programming course** and demonstra
 - Categories section
 - Newsletter section
 
-### 🛒 Shop
+###  Shop
 
 - Product listing
 - Search products
@@ -53,14 +53,14 @@ This project was developed as part of a **Web Programming course** and demonstra
 - Price sorting
 - Responsive product cards
 
-### ❤️ Wishlist
+###  Wishlist
 
 - Add to wishlist
 - Remove from wishlist
 - Wishlist counter
 - Wishlist page
 
-### 📦 Product Details
+###  Product Details
 
 - Product information
 - Quantity selector
@@ -68,7 +68,7 @@ This project was developed as part of a **Web Programming course** and demonstra
 - Buy Now button
 - Related products
 
-### 🛍 Shopping Cart
+###  Shopping Cart
 
 - Add products
 - Increase quantity
@@ -77,7 +77,7 @@ This project was developed as part of a **Web Programming course** and demonstra
 - Order summary
 - Live total calculation
 
-### 💳 Checkout
+###  Checkout
 
 - Billing information
 - Multi Currency (USD / BDT)
@@ -85,7 +85,7 @@ This project was developed as part of a **Web Programming course** and demonstra
 - Delivery estimation
 - Order summary
 
-### 🎉 Order Success
+###  Order Success
 
 - Order confirmation
 - Customer information
@@ -95,7 +95,7 @@ This project was developed as part of a **Web Programming course** and demonstra
 
 ---
 
-# 💻 Technologies Used
+#  Technologies Used
 
 - HTML5
 - CSS3
@@ -106,7 +106,7 @@ This project was developed as part of a **Web Programming course** and demonstra
 
 ---
 
-# 📁 Project Structure
+#  Project Structure
 
 ```
 ShopSphere
@@ -132,7 +132,7 @@ ShopSphere
 
 ---
 
-# 🚀 Future Improvements
+#  Future Improvements
 
 - User Authentication
 - Order History
@@ -146,7 +146,7 @@ ShopSphere
 
 ---
 
-# 📱 Responsive Design
+#  Responsive Design
 
 The website is fully responsive and optimized for
 
@@ -157,7 +157,7 @@ The website is fully responsive and optimized for
 
 ---
 
-# 👨‍💻 Developer
+#  Developer
 
 **Taiyab Ur Rahman**
 **Tusar Ray**
@@ -166,6 +166,6 @@ Department of Computer Science & Engineering
 
 ---
 
-# 📄 License
+#  License
 
 This project is created for educational and portfolio purposes.
