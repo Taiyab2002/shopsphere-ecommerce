@@ -3,49 +3,81 @@ let cart = JSON.parse(localStorage.getItem("cart")) || [];
 const cartItems = document.getElementById("cart-items");
 const subtotal = document.getElementById("subtotal");
 const total = document.getElementById("total");
-const cartCount = document.getElementById("cart-count");
+const totalItems = document.getElementById("total-items");
 
-function updateCartCount() {
+function saveCart() {
 
-    cartCount.textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
+    localStorage.setItem(
+        "cart",
+        JSON.stringify(cart)
+    );
+
+}
+
+function updateNavbarCount() {
+
+    const cartCount =
+        document.getElementById("cart-count");
+
+    if (!cartCount) return;
+
+    cartCount.textContent = cart.reduce(
+
+        (sum, item) => sum + item.quantity,
+
+        0
+
+    );
 
 }
 
 function renderCart() {
 
+    if (!cartItems) return;
+
+    cartItems.innerHTML = "";
+
     if (cart.length === 0) {
 
         cartItems.innerHTML = `
-            <div class="empty-cart">
 
-                <i class="fas fa-shopping-cart"></i>
+        <div class="empty-cart">
 
-                <h3>Your cart is empty</h3>
+            <i class="fas fa-shopping-cart"></i>
 
-                <p>Add some amazing products to your cart.</p>
+            <h3>Your cart is empty</h3>
 
-                <a href="shop.html" class="btn btn-primary mt-3">
-                    Continue Shopping
-                </a>
+            <p>Add some amazing products to your cart.</p>
 
-            </div>
+            <a href="shop.html"
+               class="btn btn-primary mt-3">
+
+                Continue Shopping
+
+            </a>
+
+        </div>
+
         `;
 
         subtotal.textContent = "$0.00";
         total.textContent = "$0.00";
 
-        updateCartCount();
+        if (totalItems)
+            totalItems.textContent = "0";
+
+        updateNavbarCount();
 
         return;
+
     }
 
-    cartItems.innerHTML = "";
-
     let grandTotal = 0;
-
+    let itemCount = 0;
         cart.forEach(item => {
 
         grandTotal += item.price * item.quantity;
+        itemCount += item.quantity;
 
         cartItems.innerHTML += `
 
@@ -55,13 +87,24 @@ function renderCart() {
 
                 <div class="d-flex align-items-center">
 
-                    <img src="${item.image}" alt="${item.name}">
+                    <img src="${item.image}"
+                         alt="${item.name}">
 
                     <div class="cart-info ms-3">
 
                         <h5>${item.name}</h5>
 
-                        <p>$${item.price.toFixed(2)}</p>
+                        <p class="mb-1">
+
+                            $${item.price.toFixed(2)}
+
+                        </p>
+
+                        <small class="text-muted">
+
+                            ${item.brand || ""}
+
+                        </small>
 
                     </div>
 
@@ -69,11 +112,23 @@ function renderCart() {
 
                 <div class="quantity-control">
 
-                    <button onclick="decreaseQuantity(${item.id})">−</button>
+                    <button onclick="decreaseQuantity(${item.id})">
 
-                    <span>${item.quantity}</span>
+                        −
 
-                    <button onclick="increaseQuantity(${item.id})">+</button>
+                    </button>
+
+                    <span>
+
+                        ${item.quantity}
+
+                    </span>
+
+                    <button onclick="increaseQuantity(${item.id})">
+
+                        +
+
+                    </button>
 
                 </div>
 
@@ -103,56 +158,54 @@ function renderCart() {
 
     });
 
-    subtotal.textContent = "$" + grandTotal.toFixed(2);
-    total.textContent = "$" + grandTotal.toFixed(2);
+    subtotal.textContent =
+        "$" + grandTotal.toFixed(2);
 
-    updateCartCount();
+    total.textContent =
+        "$" + grandTotal.toFixed(2);
 
-}
+    if (totalItems)
+        totalItems.textContent = itemCount;
 
-renderCart();
-
-function saveCart() {
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-
-    renderCart();
+    updateNavbarCount();
 
 }
 
 function increaseQuantity(id) {
 
-    const item = cart.find(product => product.id === id);
+    const item =
+        cart.find(product => product.id === id);
 
-    if (item) {
+    if (!item) return;
 
-        item.quantity++;
+    item.quantity++;
 
-        saveCart();
+    saveCart();
 
-    }
+    renderCart();
 
 }
 
 function decreaseQuantity(id) {
 
-    const item = cart.find(product => product.id === id);
+    const item =
+        cart.find(product => product.id === id);
 
-    if (item) {
+    if (!item) return;
 
-        if (item.quantity > 1) {
+    if (item.quantity > 1) {
 
-            item.quantity--;
+        item.quantity--;
 
-        } else {
+    } else {
 
-            cart = cart.filter(product => product.id !== id);
-
-        }
-
-        saveCart();
+        cart = cart.filter(product => product.id !== id);
 
     }
+
+    saveCart();
+
+    renderCart();
 
 }
 
@@ -162,5 +215,27 @@ function removeItem(id) {
 
     saveCart();
 
+    renderCart();
+
 }
 
+const clearCartBtn =
+    document.getElementById("clear-cart-btn");
+
+if (clearCartBtn) {
+
+    clearCartBtn.addEventListener("click", () => {
+
+        if (!confirm("Clear all items from cart?")) return;
+
+        cart = [];
+
+        saveCart();
+
+        renderCart();
+
+    });
+
+}
+
+renderCart();

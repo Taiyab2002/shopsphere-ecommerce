@@ -1,27 +1,132 @@
-<nav class="navbar">
-    <div class="logo">
-        <a href="../index.html">ShopSphere</a>
+<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+
+    <div class="container">
+
+        <a class="navbar-brand fw-bold fs-3 text-primary"
+           href="../index.html">
+
+            ShopSphere
+
+        </a>
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="../index.html">
+
+                        Home
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="../pages/shop.html">
+
+                        Shop
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#">
+
+                        Categories
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#">
+
+                        About
+
+                    </a>
+
+                </li>
+
+                <li class="nav-item">
+
+                    <a class="nav-link"
+                       href="#">
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+                                <a href="#"
+                   class="text-dark">
+
+                    <i class="fas fa-search"></i>
+
+                </a>
+
+                <a href="../pages/wishlist.html"
+                    class="text-dark position-relative">
+
+                    <i class="far fa-heart"></i>
+
+                    <span id="wishlist-count"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                        0
+
+                    </span>
+
+                </>
+
+                <a href="../pages/cart.html"
+                   class="text-dark position-relative">
+
+                    <i class="fas fa-shopping-cart"></i>
+
+                    <span id="cart-count"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+                        0
+
+                    </span>
+
+                </a>
+
+                <a href="#"
+                   class="btn btn-primary px-4">
+
+                    Login
+
+                </a>
+
+            </div>
+
+        </div>
+
     </div>
 
-    <ul class="nav-links">
-        <li><a href="../index.html" class="active">Home</a></li>
-        <li><a href="../pages/shop.html">Shop</a></li>
-        <li><a href="../pages/categories.html">Categories</a></li>
-        <li><a href="../pages/about.html">About</a></li>
-        <li><a href="../pages/contact.html">Contact</a></li>
-    </ul>
-
-    <div class="nav-icons">
-        <a href="../pages/wishlist.html" title="Wishlist">
-            <i class="fas fa-heart"></i>
-        </a>
-
-        <a href="../pages/cart.html" title="Cart">
-            <i class="fas fa-shopping-cart"></i>
-        </a>
-
-        <a href="../pages/login.html" class="login-btn">
-            Login
-        </a>
-    </div>
 </nav>

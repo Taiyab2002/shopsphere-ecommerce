@@ -105,3 +105,55 @@
     }
 
 }
+.cart-item{
+    transition:.3s ease;
+}
+
+.cart-item:hover{
+    transform:translateY(-4px);
+    box-shadow:0 18px 35px rgba(0,0,0,.12);
+}
+
+.cart-info small{
+    display:block;
+    margin-top:4px;
+    color:#6c757d;
+}
+
+.quantity-control button{
+    transition:.25s;
+}
+
+.quantity-control button:hover{
+    transform:scale(1.08);
+}
+
+.remove-btn{
+    transition:.25s;
+}
+
+.remove-btn:hover{
+    transform:scale(1.05);
+}
+
+.summary-card{
+    border-radius:20px;
+}
+
+.summary-card .btn{
+    border-radius:12px;
+}
+
+#clear-cart-btn{
+    transition:.3s;
+}
+
+#clear-cart-btn:hover{
+    transform:translateY(-2px);
+}
+
+.empty-cart{
+    background:#fff;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}

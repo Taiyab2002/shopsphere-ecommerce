@@ -2,12 +2,13 @@ const params = new URLSearchParams(window.location.search);
 
 const productId = Number(params.get("id"));
 
+if (!productId) {
+
+    window.location.href = "shop.html";
+
+}
+
 const product = products.find(item => item.id === productId);
-
-console.log("URL:", window.location.href);
-console.log("Product ID:", productId);
-console.log("Products:", products);
-
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 let quantity = 1;
@@ -19,31 +20,18 @@ function updateCartCount() {
     if (!cartCount) return;
 
     cartCount.textContent = cart.reduce(
+
         (sum, item) => sum + item.quantity,
+
         0
+
     );
 
 }
 
 if (!product) {
 
-    document.body.innerHTML = `
-
-    <div class="container py-5 text-center">
-
-        <h2>Product Not Found</h2>
-
-        <a href="shop.html" class="btn btn-primary mt-3">
-
-            Back to Shop
-
-        </a>
-
-    </div>
-
-    `;
-
-    throw new Error("Invalid Product ID");
+    window.location.href = "shop.html";
 
 }
 document.getElementById("product-image").src = product.image;

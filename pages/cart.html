@@ -4,184 +4,218 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Shopping Cart | ShopSphere</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
 
-    <script src="https://kit.fontawesome.com/70a642cd7c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/70a642cd7c.js"
+            crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/cart.css">
+    <link rel="stylesheet"
+          href="../assets/css/style.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/cart.css">
 
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
-
-    <div class="container">
-
-        <a class="navbar-brand fw-bold fs-3 text-primary" href="../index.html">
-            ShopSphere
-        </a>
-
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="menu">
-
-            <ul class="navbar-nav mx-auto">
-
-                <li class="nav-item">
-                    <a class="nav-link" href="../index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="shop.html">Shop</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link active" href="#">Cart</a>
-                </li>
-
-            </ul>
-
-            <div class="d-flex gap-3">
-
-                <a href="#" class="text-dark">
-                    <i class="fas fa-search"></i>
-                </a>
-
-                <a href="#" class="text-dark">
-                    <i class="far fa-heart"></i>
-                </a>
-
-                <a href="cart.html" class="text-dark position-relative">
-
-                    <i class="fas fa-shopping-cart"></i>
-
-                    <span id="cart-count"
-                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-
-                        0
-
-                    </span>
-
-                </a>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</nav>
+<div id="navbar-container"></div>
 
 <section class="py-5">
 
-    <div class="container">
+<div class="container">
 
-        <h2 class="text-center mb-5">
-            Shopping Cart
-        </h2>
+<div class="d-flex justify-content-between align-items-center flex-wrap mb-5">
 
-        <div class="row">
+<div>
 
-            <div class="col-lg-8">
+<h2 class="fw-bold">
 
-                <div id="cart-items">
+Shopping Cart
 
-                    <!-- JavaScript will render cart items here -->
+</h2>
 
-                </div>
+<p class="text-muted mb-0">
 
-            </div>
+Review your selected products before checkout.
 
-            <div class="col-lg-4">
+</p>
 
-               <div class="card shadow border-0 rounded-4 summary-card">
+</div>
 
-                    <div class="card-body">
+<a href="shop.html"
+class="btn btn-outline-primary">
 
-                        <h4 class="mb-4">
-                            Order Summary
-                        </h4>
+<i class="fas fa-arrow-left me-2"></i>
 
-                        <div class="d-flex justify-content-between mb-3">
+Continue Shopping
 
-                            <span>Subtotal</span>
+</a>
 
-                            <strong id="subtotal">
-                                $0.00
-                            </strong>
+</div>
 
-                        </div>
+<div class="row">
 
-                        <div class="d-flex justify-content-between mb-3">
+<div class="col-lg-8">
 
-                            <span>Shipping</span>
+<div id="cart-items">
 
-                            <strong>
-                                Free
-                            </strong>
+<!-- JS -->
 
-                        </div>
+</div>
 
-                        <hr>
+</div>
 
-                                                <div class="d-flex justify-content-between mb-4">
+<div class="col-lg-4">
 
-                            <span class="fs-5 fw-bold">
-                                Total
-                            </span>
+<div class="card shadow border-0 rounded-4 summary-card">
 
-                            <strong class="fs-5 text-primary" id="total">
-                                $0.00
-                            </strong>
+<div class="card-body">
 
-                        </div>
+<h4 class="mb-4">
 
-                        <button class="btn btn-primary w-100 py-3">
+Order Summary
 
-                            <i class="fas fa-credit-card me-2"></i>
+</h4>
 
-                            Proceed to Checkout
+<div class="d-flex justify-content-between mb-3">
 
-                        </button>
+<span>
 
-                    </div>
+Total Items
 
-                </div>
+</span>
 
-            </div>
+<strong id="total-items">
 
-        </div>
+0
 
-    </div>
+</strong>
+
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+
+<span>
+
+Subtotal
+
+</span>
+
+<strong id="subtotal">
+
+$0.00
+
+</strong>
+
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+
+<span>
+
+Shipping
+
+</span>
+
+<strong>
+
+Free
+
+</strong>
+
+</div>
+
+<div class="d-flex justify-content-between mb-3">
+
+<span>
+
+Discount
+
+</span>
+
+<strong class="text-success">
+
+$0.00
+
+</strong>
+
+</div>
+
+<hr>
+
+<div class="d-flex justify-content-between mb-4">
+
+<span class="fw-bold fs-5">
+
+Total
+
+</span>
+
+<strong
+id="total"
+class="text-primary fs-5">
+
+$0.00
+
+</strong>
+
+</div>
+
+<a href="checkout.html"
+   class="btn btn-primary w-100 py-3">
+
+    <i class="fas fa-credit-card me-2"></i>
+
+    Proceed to Checkout
+
+</a>
+
+<i class="fas fa-credit-card me-2"></i>
+
+Proceed to Checkout
+
+</button>
+
+<button
+id="clear-cart-btn"
+class="btn btn-outline-danger w-100 mt-3">
+
+<i class="fas fa-trash me-2"></i>
+
+Clear Cart
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </section>
 
-<footer class="bg-dark text-white py-4">
-
-    <div class="container text-center">
-
-        <p class="mb-0">
-            © 2026 ShopSphere. All Rights Reserved.
-        </p>
-
-    </div>
-
-</footer>
-
-<script src="../assets/js/products.js"></script>
-<script src="../assets/js/cart.js"></script>
+<div id="footer-container"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../assets/js/product.js"></script>
+
+<script src="../assets/js/cart.js"></script>
+
+<script src="../assets/js/components.js"></script>
 
 </body>
 
 </html>
-

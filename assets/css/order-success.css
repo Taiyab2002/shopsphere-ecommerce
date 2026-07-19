@@ -1,0 +1,141 @@
+.success-section{
+
+    min-height:80vh;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:80px 20px;
+
+}
+
+.success-card{
+
+    max-width:700px;
+
+    width:100%;
+
+    background:#ffffff;
+
+    border-radius:24px;
+
+    padding:60px 40px;
+
+    text-align:center;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+}
+
+.success-icon{
+
+    width:120px;
+
+    height:120px;
+
+    margin:0 auto 30px;
+
+    border-radius:50%;
+
+    background:#198754;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+.success-icon i{
+
+    font-size:60px;
+
+    color:#ffffff;
+
+}
+
+.success-card h1{
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.success-card p{
+
+    color:#6c757d;
+
+    font-size:18px;
+
+    margin-bottom:10px;
+
+}
+
+.success-buttons{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.success-buttons .btn{
+
+    min-width:220px;
+
+    padding:14px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.success-buttons .btn:hover{
+
+    transform:translateY(-3px);
+
+}
+
+@media(max-width:768px){
+
+    .success-card{
+
+        padding:40px 25px;
+
+    }
+
+    .success-icon{
+
+        width:90px;
+
+        height:90px;
+
+    }
+
+    .success-icon i{
+
+        font-size:45px;
+
+    }
+
+    .success-card h1{
+
+        font-size:28px;
+
+    }
+
+}
