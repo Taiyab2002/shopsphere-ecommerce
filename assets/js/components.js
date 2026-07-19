@@ -12,6 +12,15 @@ async function loadComponent(id, file) {
 
         updateNavbarCounters();
 
+        if (
+            id === "navbar-container" &&
+            typeof initializeAuthUI === "function"
+        ) {
+
+            initializeAuthUI();
+
+        }
+
     }
 
     catch (error) {
@@ -24,24 +33,32 @@ async function loadComponent(id, file) {
 
 function updateNavbarCounters() {
 
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    const cart =
+        JSON.parse(localStorage.getItem("cart")) || [];
 
-    const wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
+    const wishlist =
+        JSON.parse(localStorage.getItem("wishlist")) || [];
 
-    const cartCount = document.getElementById("cart-count");
+    const cartCount =
+        document.getElementById("cart-count");
 
-    const wishlistCount = document.getElementById("wishlist-count");
+    const wishlistCount =
+        document.getElementById("wishlist-count");
 
     if (cartCount) {
 
         cartCount.textContent =
-            cart.reduce((sum, item) => sum + item.quantity, 0);
+            cart.reduce(
+                (sum, item) => sum + item.quantity,
+                0
+            );
 
     }
 
     if (wishlistCount) {
 
-        wishlistCount.textContent = wishlist.length;
+        wishlistCount.textContent =
+            wishlist.length;
 
     }
 
@@ -56,12 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
         path === "/" ||
         path.endsWith("/shopsphere-ecommerce/");
 
-    const componentPath = isHome
+    const componentPath =
+        isHome
         ? "components/"
         : "../components/";
 
-    loadComponent("navbar-container", componentPath + "navbar.html");
+    loadComponent(
+        "navbar-container",
+        componentPath + "navbar.html"
+    );
 
-    loadComponent("footer-container", componentPath + "footer.html");
+    loadComponent(
+        "footer-container",
+        componentPath + "footer.html"
+    );
 
 });
