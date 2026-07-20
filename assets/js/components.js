@@ -10,14 +10,15 @@ async function loadComponent(id, file) {
 
         element.innerHTML = await response.text();
 
-        updateNavbarCounters();
+        if (id === "navbar-container") {
 
-        if (
-            id === "navbar-container" &&
-            typeof initializeAuthUI === "function"
-        ) {
+            updateNavbarCounters();
 
-            initializeAuthUI();
+            if (typeof initializeAuthUI === "function") {
+
+                initializeAuthUI();
+
+            }
 
         }
 
@@ -64,7 +65,7 @@ function updateNavbarCounters() {
 
 }
 
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
 
     const path = window.location.pathname;
 
@@ -75,17 +76,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const componentPath =
         isHome
-        ? "components/"
-        : "../components/";
+            ? "components/"
+            : "../components/";
 
-    loadComponent(
+    await loadComponent(
         "navbar-container",
         componentPath + "navbar.html"
     );
 
-    loadComponent(
+    await loadComponent(
         "footer-container",
         componentPath + "footer.html"
+    );
+
+    await loadComponent(
+        "toast-container",
+        componentPath + "toast.html"
     );
 
 });

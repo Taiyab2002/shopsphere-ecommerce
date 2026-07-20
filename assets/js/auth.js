@@ -1,17 +1,13 @@
 let users =
     JSON.parse(localStorage.getItem("users")) || [];
 
-
 const registerForm =
     document.getElementById("register-form");
-
 
 const loginForm =
     document.getElementById("login-form");
 
-
-
-function saveUsers(){
+function saveUsers() {
 
     localStorage.setItem(
         "users",
@@ -20,9 +16,7 @@ function saveUsers(){
 
 }
 
-
-
-function setCurrentUser(user){
+function setCurrentUser(user) {
 
     localStorage.setItem(
         "currentUser",
@@ -31,9 +25,7 @@ function setCurrentUser(user){
 
 }
 
-
-
-function getCurrentUser(){
+function getCurrentUser() {
 
     return JSON.parse(
         localStorage.getItem("currentUser")
@@ -41,20 +33,18 @@ function getCurrentUser(){
 
 }
 
+function goHome() {
 
-
-function goHome(){
-
-    if(
+    if (
         window.location.pathname.includes("/pages/")
-    ){
+    ) {
 
         window.location.href =
             "../index.html";
 
     }
 
-    else{
+    else {
 
         window.location.href =
             "index.html";
@@ -63,519 +53,399 @@ function goHome(){
 
 }
 
-
-
-function logout(){
+function logout() {
 
     localStorage.removeItem(
         "currentUser"
     );
 
+    showToast(
+        "info",
+        "Logged Out",
+        "You have been logged out successfully."
+    );
 
-    goHome();
+    setTimeout(() => {
+
+        goHome();
+
+    }, 1200);
 
 }
-
-
 
 /* ==========================
-   REGISTER SYSTEM
+   REGISTER
 ========================== */
 
+if (registerForm) {
 
-if(registerForm){
+    registerForm.addEventListener(
+        "submit",
+        function (e) {
 
+            e.preventDefault();
 
-registerForm.addEventListener(
-"submit",
-function(e){
+            const name =
+                document.getElementById("register-name")
+                    .value
+                    .trim();
 
+            const username =
+                document.getElementById("register-username")
+                    .value
+                    .trim()
+                    .toLowerCase();
 
-e.preventDefault();
+            const identifier =
+                document.getElementById("register-email")
+                    .value
+                    .trim()
+                    .toLowerCase();
 
+            const password =
+                document.getElementById("register-password")
+                    .value;
 
+            const confirmPassword =
+                document.getElementById("register-confirm-password")
+                    .value;
 
-const name =
-document.getElementById("register-name")
-.value
-.trim();
+            if (password !== confirmPassword) {
 
+                showToast(
+                    "warning",
+                    "Password Mismatch",
+                    "Passwords do not match."
+                );
 
+                return;
 
-const username =
-document.getElementById("register-username")
-.value
-.trim()
-.toLowerCase();
+            }
 
+            const exists =
+                users.find(user =>
 
+                    user.username === username ||
 
-const identifier =
-document.getElementById("register-email")
-.value
-.trim()
-.toLowerCase();
+                    user.email === identifier ||
 
+                    user.phone === identifier
 
+                );
 
-const password =
-document.getElementById("register-password")
-.value;
+            if (exists) {
 
+                showToast(
+                    "warning",
+                    "Account Exists",
+                    "Username, email or phone already exists."
+                );
 
+                return;
 
-const confirmPassword =
-document.getElementById("register-confirm-password")
-.value;
+            }
 
+            let newUser = {
 
+                name: name,
 
-if(password !== confirmPassword){
+                username: username,
 
+                password: password
 
-alert(
-"Passwords do not match!"
-);
+            };
 
+            if (identifier.includes("@")) {
 
-return;
+                newUser.email =
+                    identifier;
 
+            }
 
-}
+            else {
 
+                newUser.phone =
+                    identifier;
 
+            }
 
+            users.push(newUser);
 
-const exists =
-users.find(user =>
+            saveUsers();
 
+            showToast(
+                "success",
+                "Registration Successful",
+                "Your account has been created successfully."
+            );
 
-user.username === username ||
+            setTimeout(() => {
 
-user.email === identifier ||
+                window.location.href =
+                    "login.html";
 
-user.phone === identifier
+            }, 1500);
 
+        }
 
-);
-
-
-
-if(exists){
-
-
-alert(
-"Account already exists!"
-);
-
-
-return;
-
-
-}
-
-
-
-
-let newUser = {
-
-
-name:name,
-
-
-username:username,
-
-
-password:password
-
-
-};
-
-
-
-
-if(identifier.includes("@")){
-
-
-newUser.email =
-identifier;
-
-
-}
-
-else{
-
-
-newUser.phone =
-identifier;
-
-
-}
-
-
-
-
-users.push(newUser);
-
-
-
-saveUsers();
-
-
-
-alert(
-"Registration successful! Please login."
-);
-
-
-
-window.location.href =
-"login.html";
-
-
-
-});
+    );
 
 }
 /* ==========================
    LOGIN SYSTEM
 ========================== */
 
+function findUser(identifier, password) {
 
-function findUser(identifier, password){
+    identifier =
+        identifier
+            .trim()
+            .toLowerCase();
 
+    return users.find(user =>
 
-identifier =
-identifier.trim().toLowerCase();
+        (
 
+            (user.email &&
+                user.email.toLowerCase() === identifier)
 
+            ||
 
-return users.find(user =>
+            (user.username &&
+                user.username.toLowerCase() === identifier)
 
+            ||
 
-(
-(user.email &&
- user.email.toLowerCase() === identifier)
+            (user.phone &&
+                user.phone === identifier)
 
-||
+        )
 
-(user.username &&
- user.username.toLowerCase() === identifier)
+        &&
 
-||
+        user.password === password
 
-(user.phone &&
- user.phone === identifier)
-
-)
-
-&&
-
-user.password === password
-
-
-
-);
-
-
+    );
 
 }
 
+if (loginForm) {
 
+    loginForm.addEventListener(
+        "submit",
+        function (e) {
 
-if(loginForm){
+            e.preventDefault();
 
+            const identifier =
+                document.getElementById("login-email")
+                    .value
+                    .trim();
 
-loginForm.addEventListener(
-"submit",
-function(e){
+            const password =
+                document.getElementById("login-password")
+                    .value;
 
+            const user =
+                findUser(
+                    identifier,
+                    password
+                );
 
-e.preventDefault();
+            if (!user) {
 
+                showToast(
+                    "error",
+                    "Login Failed",
+                    "Invalid username, email, phone or password."
+                );
 
+                return;
 
-const identifier =
-document.getElementById("login-email")
-.value
-.trim();
+            }
 
+            setCurrentUser(user);
 
+            showToast(
+                "success",
+                "Login Successful",
+                "Welcome back, " + user.name + "!"
+            );
 
-const password =
-document.getElementById("login-password")
-.value;
+            setTimeout(() => {
 
+                goHome();
 
+            }, 1500);
 
-const user =
-findUser(
-identifier,
-password
-);
+        }
 
-
-
-if(!user){
-
-
-alert(
-"Invalid username, email or password."
-);
-
-
-
-return;
-
-
-}
-
-
-
-setCurrentUser(user);
-
-
-
-alert(
-"Login successful!"
-);
-
-
-
-goHome();
-
-
-
-});
+    );
 
 }
-
-
-
-
-
 
 /* ==========================
    NAVBAR AUTH UI
 ========================== */
 
+function initializeAuthUI() {
 
-function initializeAuthUI(){
+    const currentUser =
+        getCurrentUser();
 
+    const loginLink =
+        document.getElementById("nav-login");
 
-const currentUser =
-getCurrentUser();
+    const registerLink =
+        document.getElementById("nav-register");
 
+    const userMenu =
+        document.getElementById("nav-user");
 
+    const userName =
+        document.getElementById("nav-username");
 
-const loginLink =
-document.getElementById("nav-login");
+    const logoutBtn =
+        document.getElementById("logout-btn");
 
+    if (!userMenu) return;
 
+    if (currentUser) {
 
-const registerLink =
-document.getElementById("nav-register");
+        if (loginLink) {
 
+            loginLink.style.display =
+                "none";
 
+        }
 
-const userMenu =
-document.getElementById("nav-user");
+        if (registerLink) {
 
+            registerLink.style.display =
+                "none";
 
+        }
 
-const userName =
-document.getElementById("nav-username");
+        userMenu.style.display =
+            "block";
 
+        if (userName) {
 
+            userName.textContent =
+                currentUser.name;
 
-const logoutBtn =
-document.getElementById("logout-btn");
+        }
 
+        if (logoutBtn) {
 
+            logoutBtn.onclick =
+                logout;
 
+        }
 
-if(!userMenu) return;
+    }
 
+    else {
 
+        userMenu.style.display =
+            "none";
 
-
-if(currentUser){
-
-
-
-if(loginLink){
-
-loginLink.style.display =
-"none";
-
-}
-
-
-
-if(registerLink){
-
-registerLink.style.display =
-"none";
-
-}
-
-
-
-userMenu.style.display =
-"block";
-
-
-
-if(userName){
-
-userName.textContent =
-currentUser.name;
+    }
 
 }
-
-
-
-if(logoutBtn){
-
-
-logoutBtn.onclick =
-logout;
-
-
-}
-
-
-
-}
-
-
-
-else{
-
-
-userMenu.style.display =
-"none";
-
-
-}
-
-
-
-}
-
-
-
-
 
 document.addEventListener(
-"DOMContentLoaded",
-function(){
+    "DOMContentLoaded",
+    function () {
 
+        initializeAuthUI();
 
-initializeAuthUI();
-
-
-});
+    }
+);
 /* ==========================
    PASSWORD TOGGLE
 ========================== */
 
-
 const togglePassword =
-document.getElementById(
-"toggle-password"
-);
-
-
+    document.getElementById("toggle-password");
 
 const passwordInput =
-document.getElementById(
-"login-password"
-);
+    document.getElementById("login-password");
 
+if (togglePassword && passwordInput) {
 
+    togglePassword.addEventListener(
+        "click",
+        function () {
 
-if(
-togglePassword &&
-passwordInput
-){
+            if (passwordInput.type === "password") {
 
+                passwordInput.type = "text";
 
-togglePassword.addEventListener(
-"click",
-function(){
+                this.innerHTML =
+                    '<i class="fas fa-eye-slash"></i>';
 
+            }
 
+            else {
 
-if(
-passwordInput.type === "password"
-){
+                passwordInput.type = "password";
 
+                this.innerHTML =
+                    '<i class="fas fa-eye"></i>';
 
-passwordInput.type =
-"text";
+            }
 
-
-
-this.innerHTML =
-'<i class="fas fa-eye-slash"></i>';
-
-
+        }
+    );
 
 }
 
-else{
-
-
-passwordInput.type =
-"password";
-
-
-
-this.innerHTML =
-'<i class="fas fa-eye"></i>';
-
-
-
-}
-
-
-
-});
-
-
-}
 /* ==========================
    CHECKOUT PROTECTION
 ========================== */
 
+(function () {
 
-const currentUser =
-getCurrentUser();
+    const currentUser =
+        getCurrentUser();
 
+    if (
 
+        window.location.pathname.includes("checkout.html")
 
-if(
+        &&
 
-window.location.pathname.includes(
-"checkout.html"
-)
+        !currentUser
 
-&&
+    ) {
 
-!currentUser
+        showToast(
+            "warning",
+            "Login Required",
+            "Please login before proceeding to checkout."
+        );
 
-){
+        setTimeout(() => {
 
+            window.location.href =
+                "login.html";
 
-alert(
-"Please login before checkout."
+        }, 1500);
+
+    }
+
+})();
+
+/* ==========================
+   INITIALIZATION
+========================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        initializeAuthUI();
+
+    }
 );
-
-
-
-window.location.href =
-"login.html";
-
-
-}
