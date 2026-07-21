@@ -20,11 +20,28 @@
           href="../assets/css/style.css">
 
     <link rel="stylesheet"
+          href="../assets/css/navbar.css">
+
+    <link rel="stylesheet"
           href="../assets/css/auth.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/footer.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/toast.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/theme.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/responsive.css">
 
 </head>
 
 <body class="bg-light">
+
+<div id="navbar-container"></div>
 
 <div class="container py-5">
 
@@ -40,7 +57,7 @@
 
 <h2 class="fw-bold">
 
-Welcome Back 
+Welcome Back
 
 </h2>
 
@@ -58,9 +75,10 @@ Sign in to continue shopping with ShopSphere
 type="button"
 class="btn btn-light border rounded-pill py-3 social-btn">
 
-<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-     class="social-logo me-2"
-     alt="Google">
+<img
+src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+class="social-logo me-2"
+alt="Google">
 
 Continue with Google
 
@@ -99,7 +117,8 @@ Continue with Apple
 </div>
 
 <form id="login-form">
-    <div class="mb-3">
+
+<div class="mb-3">
 
 <label class="form-label">
 
@@ -116,21 +135,15 @@ Username / Email / Phone Number
 </span>
 
 <input
-
 type="text"
-
 id="login-email"
-
 class="form-control"
-
 placeholder="Enter username, email or phone"
-
 required>
 
 </div>
 
 </div>
-
 
 <div class="mb-3">
 
@@ -149,24 +162,15 @@ Password
 </span>
 
 <input
-
 type="password"
-
 id="login-password"
-
 class="form-control"
-
 placeholder="Enter your password"
-
 required>
 
-
 <button
-
 class="btn btn-outline-secondary"
-
 type="button"
-
 id="toggle-password">
 
 <i class="fas fa-eye"></i>
@@ -177,25 +181,17 @@ id="toggle-password">
 
 </div>
 
-
 <div class="d-flex justify-content-between align-items-center mb-4">
-
 
 <div class="form-check">
 
 <input
-
 class="form-check-input"
-
 type="checkbox"
-
 id="remember-me">
 
-
 <label
-
 class="form-check-label"
-
 for="remember-me">
 
 Remember me
@@ -204,23 +200,18 @@ Remember me
 
 </div>
 
-
-<a href="#"
-
+<a
+href="#"
 class="text-decoration-none">
 
 Forgot Password?
 
 </a>
 
-
 </div>
 
-
 <button
-
 type="submit"
-
 class="btn btn-primary w-100 rounded-pill py-3 fw-semibold">
 
 <i class="fas fa-sign-in-alt me-2"></i>
@@ -229,21 +220,15 @@ Sign In
 
 </button>
 
-
 </form>
-
-
 <div class="text-center mt-4">
-
 
 <p class="mb-0 text-muted">
 
 New to ShopSphere?
 
 <a
-
 href="register.html"
-
 class="fw-bold text-primary text-decoration-none">
 
 Create Account
@@ -252,10 +237,6 @@ Create Account
 
 </p>
 
-
-</div>
-
-
 </div>
 
 </div>
@@ -264,16 +245,22 @@ Create Account
 
 </div>
 
+</div>
 
-<script src="../assets/js/components.js"></script>
+</div>
 
-<link rel="stylesheet" href="../assets/css/toast.css">
+<div id="toast-container"></div>
 
-<script src="../assets/js/auth.js"></script>
+<div id="footer-container"></div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-<div id="toast-container"></div>
+<script src="../assets/js/components.js"></script>
+
+<script src="../assets/js/auth.js"></script>
+
+<script src="../assets/js/theme.js"></script>
+
 </body>
 
 </html>

@@ -20,7 +20,25 @@
           href="../assets/css/style.css">
 
     <link rel="stylesheet"
+          href="../assets/css/navbar.css">
+
+    <link rel="stylesheet"
           href="../assets/css/shop.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/product.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/footer.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/toast.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/theme.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/responsive.css">
 
 </head>
 
@@ -50,188 +68,166 @@
 
 <section class="py-5">
 
-<div class="container">
+    <div class="container">
 
-<div class="row mb-4">
+        <div class="row mb-4">
 
-<div class="col-lg-4 mb-3">
+            <div class="col-lg-4 mb-3">
 
-<input
-id="search-input"
-type="text"
-class="form-control"
-placeholder="Search products...">
-
-</div>
-
-<div class="col-lg-4 mb-3">
-
-<select
-id="category-filter"
-class="form-select">
-
-<option value="All">
-
-All Categories
-
-</option>
-
-<option value="Shoes">
-
-Shoes
-
-</option>
-
-<option value="Watch">
-
-Watch
-
-</option>
-
-<option value="Electronics">
-
-Electronics
-
-</option>
-
-<option value="Phone">
-
-Phone
-
-</option>
-
-<option value="Bag">
-
-Bag
-
-</option>
-
-</select>
-
-</div>
-
-<div class="col-lg-4 mb-3">
-
-<select
-id="sort-filter"
-class="form-select">
-
-<option value="default">
-
-Sort By
-
-</option>
-
-<option value="low-high">
-
-Price Low to High
-
-</option>
-
-<option value="high-low">
-
-Price High to Low
-
-</option>
-
-<option value="a-z">
-
-Name A - Z
-
-</option>
-
-<option value="z-a">
-
-Name Z - A
-
-</option>
-
-</select>
-
-</div>
-
-</div>
-
-<div
-id="product-list"
-class="row g-4">
-
-<!-- Products will be loaded dynamically -->
-
-</div>
-<nav class="mt-5">
-
-    <ul id="pagination"
-        class="pagination justify-content-center">
-
-        <li class="page-item active">
-
-            <a class="page-link"
-               href="#">
-
-                1
-
-            </a>
-
-        </li>
-
-        <li class="page-item">
-
-            <a class="page-link"
-               href="#">
-
-                2
-
-            </a>
-
-        </li>
-
-        <li class="page-item">
-
-            <a class="page-link"
-               href="#">
-
-                3
-
-            </a>
-
-        </li>
-
-    </ul>
-
-</nav>
-
-</div>
-
-</section>
-
-<div class="toast-container position-fixed top-0 end-0 p-3">
-
-    <div id="cartToast"
-         class="toast align-items-center text-bg-success border-0"
-         role="alert">
-
-        <div class="d-flex">
-
-            <div id="toast-message"
-                 class="toast-body">
-
-                Product added successfully!
+                <input
+                    id="search-input"
+                    type="text"
+                    class="form-control"
+                    placeholder="Search products...">
 
             </div>
 
-            <button
-                type="button"
-                class="btn-close btn-close-white me-2 m-auto"
-                data-bs-dismiss="toast">
+            <div class="col-lg-4 mb-3">
 
-            </button>
+                <select
+                    id="category-filter"
+                    class="form-select">
+
+                    <option value="All">
+
+                        All Categories
+
+                    </option>
+
+                    <option value="Shoes">
+
+                        Shoes
+
+                    </option>
+
+                    <option value="Watch">
+
+                        Watch
+
+                    </option>
+
+                    <option value="Electronics">
+
+                        Electronics
+
+                    </option>
+
+                    <option value="Phone">
+
+                        Phone
+
+                    </option>
+
+                    <option value="Bag">
+
+                        Bag
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="col-lg-4 mb-3">
+
+                <select
+                    id="sort-filter"
+                    class="form-select">
+
+                    <option value="default">
+
+                        Sort By
+
+                    </option>
+
+                    <option value="low-high">
+
+                        Price Low to High
+
+                    </option>
+
+                    <option value="high-low">
+
+                        Price High to Low
+
+                    </option>
+
+                    <option value="a-z">
+
+                        Name A - Z
+
+                    </option>
+
+                    <option value="z-a">
+
+                        Name Z - A
+
+                    </option>
+
+                </select>
+
+            </div>
 
         </div>
 
+        <div
+            id="product-list"
+            class="row g-4">
+
+            <!-- Products will load here -->
+
+        </div>
+                <nav class="mt-5">
+
+            <ul
+                id="pagination"
+                class="pagination justify-content-center">
+
+                <li class="page-item active">
+
+                    <a
+                        class="page-link"
+                        href="#">
+
+                        1
+
+                    </a>
+
+                </li>
+
+                <li class="page-item">
+
+                    <a
+                        class="page-link"
+                        href="#">
+
+                        2
+
+                    </a>
+
+                </li>
+
+                <li class="page-item">
+
+                    <a
+                        class="page-link"
+                        href="#">
+
+                        3
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+        </nav>
+
     </div>
 
-</div>
+</section>
+
+<div id="toast-container"></div>
 
 <div id="footer-container"></div>
 
@@ -244,6 +240,9 @@ class="row g-4">
 <script src="../assets/js/components.js"></script>
 
 <script src="../assets/js/auth.js"></script>
+
+<script src="../assets/js/theme.js"></script>
+
 </body>
 
 </html>

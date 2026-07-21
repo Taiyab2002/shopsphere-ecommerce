@@ -10,53 +10,56 @@
 
     <title>Create Account | ShopSphere</title>
 
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
           rel="stylesheet">
-
 
     <script src="https://kit.fontawesome.com/70a642cd7c.js"
             crossorigin="anonymous"></script>
 
-
     <link rel="stylesheet"
           href="../assets/css/style.css">
 
+    <link rel="stylesheet"
+          href="../assets/css/navbar.css">
 
     <link rel="stylesheet"
           href="../assets/css/auth.css">
 
+    <link rel="stylesheet"
+          href="../assets/css/footer.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/toast.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/theme.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/responsive.css">
 
 </head>
 
-
 <body class="bg-light">
 
+<div id="navbar-container"></div>
 
 <div class="container py-5">
 
-
 <div class="row justify-content-center">
-
 
 <div class="col-lg-5 col-md-8">
 
-
 <div class="card shadow-lg border-0 rounded-4">
-
 
 <div class="card-body p-5">
 
-
 <div class="text-center mb-4">
-
 
 <h2 class="fw-bold">
 
-Create Account 
+Create Account
 
 </h2>
-
 
 <p class="text-muted">
 
@@ -64,66 +67,46 @@ Join ShopSphere and start shopping
 
 </p>
 
-
 </div>
-
-
 
 <div class="d-grid gap-3 mb-4">
 
-
 <button
 type="button"
 class="btn btn-light border rounded-pill py-3 social-btn">
 
-
-<img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
-     class="social-logo me-2"
-     alt="Google">
-
+<img
+src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg"
+class="social-logo me-2"
+alt="Google">
 
 Continue with Google
 
-
 </button>
-
-
 
 <button
 type="button"
 class="btn btn-light border rounded-pill py-3 social-btn">
-
 
 <i class="fab fa-facebook text-primary me-2"></i>
 
-
 Continue with Facebook
 
-
 </button>
-
-
 
 <button
 type="button"
 class="btn btn-light border rounded-pill py-3 social-btn">
 
-
 <i class="fab fa-apple me-2"></i>
-
 
 Continue with Apple
 
-
 </button>
-
 
 </div>
 
-
-
 <div class="text-center mb-4">
-
 
 <span class="text-muted">
 
@@ -131,14 +114,11 @@ Continue with Apple
 
 </span>
 
-
 </div>
-
-
 
 <form id="register-form">
 
-    <div class="mb-3">
+<div class="mb-3">
 
 <label class="form-label">
 
@@ -146,9 +126,7 @@ Full Name
 
 </label>
 
-
 <div class="input-group">
-
 
 <span class="input-group-text">
 
@@ -156,25 +134,16 @@ Full Name
 
 </span>
 
-
 <input
-
 type="text"
-
 id="register-name"
-
 class="form-control"
-
 placeholder="Enter your full name"
-
 required>
 
-
 </div>
 
 </div>
-
-
 
 <div class="mb-3">
 
@@ -184,9 +153,7 @@ Username
 
 </label>
 
-
 <div class="input-group">
-
 
 <span class="input-group-text">
 
@@ -194,25 +161,16 @@ Username
 
 </span>
 
-
 <input
-
 type="text"
-
 id="register-username"
-
 class="form-control"
-
 placeholder="Choose a username"
-
 required>
 
-
 </div>
 
 </div>
-
-
 
 <div class="mb-3">
 
@@ -222,9 +180,7 @@ Email / Phone Number
 
 </label>
 
-
 <div class="input-group">
-
 
 <span class="input-group-text">
 
@@ -232,25 +188,16 @@ Email / Phone Number
 
 </span>
 
-
 <input
-
 type="text"
-
 id="register-email"
-
 class="form-control"
-
 placeholder="Enter email or phone number"
-
 required>
 
-
 </div>
 
 </div>
-
-
 
 <div class="mb-3">
 
@@ -260,9 +207,7 @@ Password
 
 </label>
 
-
 <div class="input-group">
-
 
 <span class="input-group-text">
 
@@ -270,134 +215,13 @@ Password
 
 </span>
 
-
 <input
-
 type="password"
-
 id="register-password"
-
 class="form-control"
-
 placeholder="Create password"
-
 required>
 
-
 </div>
 
 </div>
-
-
-
-<div class="mb-3">
-
-<label class="form-label">
-
-Confirm Password
-
-</label>
-
-
-<div class="input-group">
-
-
-<span class="input-group-text">
-
-<i class="fas fa-check-circle"></i>
-
-</span>
-
-
-<input
-
-type="password"
-
-id="register-confirm-password"
-
-class="form-control"
-
-placeholder="Confirm password"
-
-required>
-
-
-</div>
-
-</div>
-
-
-
-<button
-
-type="submit"
-
-class="btn btn-primary w-100 rounded-pill py-3 fw-semibold">
-
-
-<i class="fas fa-user-plus me-2"></i>
-
-
-Create Account
-
-
-</button>
-
-
-</form>
-
-
-
-<div class="text-center mt-4">
-
-
-<p class="mb-0 text-muted">
-
-
-Already have an account?
-
-
-<a
-
-href="login.html"
-
-class="fw-bold text-primary text-decoration-none">
-
-
-Sign In
-
-
-</a>
-
-
-</p>
-
-
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<script src="../assets/js/components.js"></script>
-
-<link rel="stylesheet" href="../assets/css/toast.css">
-
-<script src="../assets/js/auth.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-
-<div id="toast-container"></div>
-</body>
-
-</html>

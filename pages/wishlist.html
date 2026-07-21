@@ -19,6 +19,24 @@
     <link rel="stylesheet"
           href="../assets/css/style.css">
 
+    <link rel="stylesheet"
+          href="../assets/css/navbar.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/product.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/footer.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/toast.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/theme.css">
+
+    <link rel="stylesheet"
+          href="../assets/css/responsive.css">
+
 </head>
 
 <body>
@@ -29,20 +47,47 @@
 
     <div class="container">
 
-        <h2 class="fw-bold mb-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap mb-5">
 
-            My Wishlist
+            <div>
 
-        </h2>
+                <h2 class="fw-bold">
 
-        <div id="wishlist-items"
-             class="row g-4">
+                    My Wishlist
+
+                </h2>
+
+                <p class="text-muted mb-0">
+
+                    Save your favourite products for later.
+
+                </p>
+
+            </div>
+
+            <a href="shop.html"
+               class="btn btn-outline-primary">
+
+                <i class="fas fa-arrow-left me-2"></i>
+
+                Continue Shopping
+
+            </a>
 
         </div>
 
-    </div>
+        <div
+            id="wishlist-items"
+            class="row g-4">
+
+            <!-- Wishlist Items -->
+
+        </div>
+            </div>
 
 </section>
+
+<div id="toast-container"></div>
 
 <div id="footer-container"></div>
 
@@ -50,11 +95,13 @@
 
 <script src="../assets/js/product.js"></script>
 
+<script src="../assets/js/wishlist.js"></script>
+
 <script src="../assets/js/components.js"></script>
 
 <script src="../assets/js/auth.js"></script>
 
-<script src="../assets/js/wishlist.js"></script>
+<script src="../assets/js/theme.js"></script>
 
 </body>
 

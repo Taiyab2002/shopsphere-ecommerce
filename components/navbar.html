@@ -1,264 +1,322 @@
 <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
 
-<div class="container">
+    <div class="container">
 
-<a
-class="navbar-brand fw-bold fs-3 text-primary"
-href="../index.html">
+        <a class="navbar-brand fw-bold fs-3 text-primary"
+           href="../index.html">
 
-ShopSphere
+            ShopSphere
 
-</a>
+        </a>
 
-<button
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarMenu">
 
-class="navbar-toggler"
+            <span class="navbar-toggler-icon"></span>
 
-type="button"
+        </button>
 
-data-bs-toggle="collapse"
+        <div class="collapse navbar-collapse"
+             id="navbarMenu">
 
-data-bs-target="#navbarMenu">
+            <ul class="navbar-nav mx-auto">
 
-<span class="navbar-toggler-icon"></span>
+                <li class="nav-item">
 
-</button>
+                    <a class="nav-link"
+                       href="../index.html">
 
-<div
+                        Home
 
-class="collapse navbar-collapse"
+                    </a>
 
-id="navbarMenu">
+                </li>
 
-<ul class="navbar-nav mx-auto">
+                <li class="nav-item">
 
-<li class="nav-item">
+                    <a class="nav-link"
+                       href="../pages/shop.html">
 
-<a
-class="nav-link"
-href="../index.html">
+                        Shop
 
-Home
+                    </a>
 
-</a>
+                </li>
 
-</li>
+                <li class="nav-item">
 
-<li class="nav-item">
+                    <a class="nav-link"
+                       href="#">
 
-<a
-class="nav-link"
-href="../pages/shop.html">
+                        Categories
 
-Shop
+                    </a>
 
-</a>
+                </li>
 
-</li>
+                <li class="nav-item">
 
-<li class="nav-item">
+                    <a class="nav-link"
+                       href="#">
 
-<a
-class="nav-link"
-href="#">
+                        About
 
-Categories
+                    </a>
 
-</a>
+                </li>
 
-</li>
+                <li class="nav-item">
 
-<li class="nav-item">
+                    <a class="nav-link"
+                       href="#">
 
-<a
-class="nav-link"
-href="#">
+                        Contact
 
-About
+                    </a>
 
-</a>
+                </li>
 
-</li>
+            </ul>
 
-<li class="nav-item">
+            <div class="d-flex align-items-center gap-3">
 
-<a
-class="nav-link"
-href="#">
+                <!-- Search -->
 
-Contact
+                <a href="#"
+                   class="text-dark">
 
-</a>
+                    <i class="fas fa-search"></i>
 
-</li>
+                </a>
 
-</ul>
+                <!-- Wishlist -->
 
-<div class="d-flex align-items-center gap-3">
+                <a href="../pages/wishlist.html"
+                   class="text-dark position-relative">
 
-<a
+                    <i class="far fa-heart"></i>
 
-href="#"
+                    <span id="wishlist-count"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
-class="text-dark">
+                        0
 
-<i class="fas fa-search"></i>
+                    </span>
 
-</a>
+                </a>
 
-<a
+                <!-- Cart -->
 
-href="../pages/wishlist.html"
+                <a href="../pages/cart.html"
+                   class="text-dark position-relative">
 
-class="text-dark position-relative">
+                    <i class="fas fa-shopping-cart"></i>
 
-<i class="far fa-heart"></i>
+                    <span id="cart-count"
+                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
-<span
+                        0
 
-id="wishlist-count"
+                    </span>
 
-class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                </a>
+                                <!-- Theme -->
 
-0
+                <div class="dropdown">
 
-</span>
+                    <button
+                        class="btn btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        style="width:42px;height:42px;">
 
-</a>
+                        <i
+                            id="theme-icon"
+                            class="fas fa-desktop">
 
-<a
+                        </i>
 
-href="../pages/cart.html"
+                    </button>
 
-class="text-dark position-relative">
+                    <ul class="dropdown-menu dropdown-menu-end">
 
-<i class="fas fa-shopping-cart"></i>
+                        <li>
 
-<span
+                            <button
+                                class="dropdown-item theme-option d-flex justify-content-between align-items-center"
+                                data-theme="light"
+                                onclick="setTheme('light')">
 
-id="cart-count"
+                                <span>
 
-class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                                    ☀️ Light
 
-0
+                                </span>
 
-</span>
+                                <i
+                                    class="fas fa-check theme-check">
 
-</a>
-<a
+                                </i>
 
-id="nav-login"
+                            </button>
 
-href="../pages/login.html"
+                        </li>
 
-class="btn btn-outline-primary px-4">
+                        <li>
 
-Login
+                            <button
+                                class="dropdown-item theme-option d-flex justify-content-between align-items-center"
+                                data-theme="dark"
+                                onclick="setTheme('dark')">
 
-</a>
+                                <span>
 
-<a
+                                    🌙 Dark
 
-id="nav-register"
+                                </span>
 
-href="../pages/register.html"
+                                <i
+                                    class="fas fa-check theme-check">
 
-class="btn btn-primary px-4">
+                                </i>
 
-Register
+                            </button>
 
-</a>
+                        </li>
 
-<div
+                        <li>
 
-id="nav-user"
+                            <button
+                                class="dropdown-item theme-option d-flex justify-content-between align-items-center"
+                                data-theme="system"
+                                onclick="setTheme('system')">
 
-class="dropdown"
+                                <span>
 
-style="display:none;">
+                                    💻 Use System Settings
 
-<button
+                                </span>
 
-class="btn btn-primary dropdown-toggle"
+                                <i
+                                    class="fas fa-check theme-check">
 
-type="button"
+                                </i>
 
-data-bs-toggle="dropdown">
+                            </button>
 
-<i class="fas fa-user-circle me-2"></i>
+                        </li>
 
-<span id="nav-username">
+                    </ul>
 
-User
+                </div>
 
-</span>
+                <!-- Guest Menu -->
 
-</button>
+                <div id="nav-login">
 
-<ul class="dropdown-menu dropdown-menu-end">
+                    <a
+                        href="../pages/login.html"
+                        class="btn btn-primary px-4">
 
-<li>
+                        Login
 
-<a
+                    </a>
 
-class="dropdown-item"
+                </div>
 
-href="#">
+                <div id="nav-register">
 
-<i class="fas fa-user me-2"></i>
+                    <a
+                        href="../pages/register.html"
+                        class="btn btn-outline-primary px-4">
 
-My Profile
+                        Register
 
-</a>
+                    </a>
 
-</li>
+                </div>
+                                <!-- User Menu -->
 
-<li>
+                <div
+                    id="nav-user"
+                    class="dropdown"
+                    style="display:none;">
 
-<a
+                    <button
+                        class="btn btn-primary dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown">
 
-class="dropdown-item"
+                        <i class="fas fa-user-circle me-2"></i>
 
-href="#">
+                        <span id="nav-username">
 
-<i class="fas fa-box me-2"></i>
+                            User
 
-My Orders
+                        </span>
 
-</a>
+                    </button>
 
-</li>
+                    <ul class="dropdown-menu dropdown-menu-end">
 
-<li>
+                        <li>
 
-<hr class="dropdown-divider">
+                            <a
+                                class="dropdown-item"
+                                href="../pages/profile.html">
 
-</li>
+                                <i class="fas fa-user me-2"></i>
 
-<li>
+                                My Profile
 
-<button
+                            </a>
 
-id="logout-btn"
+                        </li>
 
-class="dropdown-item text-danger">
+                        <li>
 
-<i class="fas fa-sign-out-alt me-2"></i>
+                            <a
+                                class="dropdown-item"
+                                href="../pages/order-history.html">
 
-Logout
+                                <i class="fas fa-box me-2"></i>
 
-</button>
+                                My Orders
 
-</li>
+                            </a>
 
-</ul>
+                        </li>
 
-</div>
+                        <li>
 
-</div>
+                            <hr class="dropdown-divider">
 
-</div>
+                        </li>
 
-</div>
+                        <li>
+
+                            <button
+                                id="logout-btn"
+                                class="dropdown-item text-danger">
+
+                                <i class="fas fa-sign-out-alt me-2"></i>
+
+                                Logout
+
+                            </button>
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </nav>
