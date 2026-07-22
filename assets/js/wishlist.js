@@ -103,7 +103,7 @@ function renderWishlist() {
 
         <div class="col-12 text-center py-5">
 
-            <h3>Your wishlist is empty ❤️</h3>
+            <h3>Your wishlist is empty! </h3>
 
             <a href="shop.html"
                class="btn btn-primary mt-3">

@@ -2,7 +2,7 @@ const THEME_KEY = "shopsphere-theme";
 
 function getSavedTheme() {
 
-    return localStorage.getItem(THEME_KEY) || "system";
+    return localStorage.getItem(THEME_KEY) || "light";
 
 }
 

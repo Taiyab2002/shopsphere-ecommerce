@@ -541,3 +541,200 @@ body{
     }
 
 }
+/* ==========================================
+   DARK THEME SUPPORT
+========================================== */
+
+[data-theme="dark"] body{
+
+    background:var(--bg-color);
+
+}
+
+[data-theme="dark"] .card{
+
+    background:var(--card-bg);
+
+    border-color:var(--border-color);
+
+}
+
+[data-theme="dark"] .card-body{
+
+    background:transparent;
+
+}
+
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] label,
+[data-theme="dark"] .form-check-label{
+
+    color:var(--text-color);
+
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] .text-muted{
+
+    color:var(--text-muted) !important;
+
+}
+
+[data-theme="dark"] .input-group-text{
+
+    background:var(--card-bg);
+
+    color:var(--text-color);
+
+    border-color:var(--border-color);
+
+}
+
+[data-theme="dark"] .form-control{
+
+    background:var(--card-bg);
+
+    color:var(--text-color);
+
+    border-color:var(--border-color);
+
+}
+
+[data-theme="dark"] .form-control::placeholder{
+
+    color:var(--text-muted);
+
+}
+
+[data-theme="dark"] .form-control:focus{
+
+    background:var(--card-bg);
+
+    color:var(--text-color);
+
+}
+
+[data-theme="dark"] .btn-light{
+
+    background:var(--bg-secondary);
+
+    color:var(--text-color);
+
+    border-color:var(--border-color);
+
+}
+
+[data-theme="dark"] .btn-light:hover{
+
+    background:var(--card-bg);
+
+}
+
+[data-theme="dark"] .social-btn{
+
+    background:var(--bg-secondary);
+
+    color:var(--text-color);
+
+    border-color:var(--border-color);
+
+}
+
+[data-theme="dark"] .social-btn:hover{
+
+    background:var(--card-bg);
+
+}
+
+[data-theme="dark"] .divider::before,
+[data-theme="dark"] .divider::after{
+
+    background:var(--border-color);
+
+}
+
+[data-theme="dark"] .divider span{
+
+    color:var(--text-muted);
+
+}
+/* ==========================================
+   LIGHT THEME EXPLICIT SUPPORT
+========================================== */
+
+[data-theme="light"] body{
+
+    background:linear-gradient(
+        135deg,
+        #f5f7fb,
+        #edf3ff
+    );
+
+}
+
+[data-theme="light"] .card{
+
+    background:#ffffff;
+
+}
+
+[data-theme="light"] .input-group-text{
+
+    background:#ffffff;
+
+    color:#666;
+
+}
+
+[data-theme="light"] .form-control{
+
+    background:#ffffff;
+
+    color:#212529;
+
+}
+
+[data-theme="light"] .social-btn{
+
+    background:#ffffff;
+
+    color:#212529;
+
+}
+
+[data-theme="light"] .social-btn:hover{
+
+    background:#f8f9fa;
+
+}
+
+/* ==========================================
+   SMOOTH THEME TRANSITION
+========================================== */
+
+body,
+.card,
+.card-body,
+.form-control,
+.input-group-text,
+.social-btn,
+.btn,
+label,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+a{
+
+    transition:
+        background-color .25s ease,
+        color .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+}
