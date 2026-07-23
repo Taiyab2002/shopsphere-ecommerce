@@ -48,19 +48,86 @@
 
 <section class="shop-banner">
 
-    <div class="container text-center">
+    <div class="banner-glow glow-1"></div>
+    <div class="banner-glow glow-2"></div>
 
-        <h1>
+    <div class="container">
 
-            Our Shop
+        <div class="row align-items-center">
 
-        </h1>
+            <div class="col-lg-7">
 
-        <p>
+                <span class="shop-badge">
 
-            Discover premium quality products at the best prices.
+                    PREMIUM COLLECTION
 
-        </p>
+                </span>
+
+                <h1 class="shop-title">
+
+                    Discover
+
+                    <span>Premium</span>
+
+                    Products
+
+                </h1>
+
+                <p class="shop-subtitle">
+
+                    Explore thousands of carefully selected products,
+                    exclusive collections and premium brands with
+                    fast delivery and secure shopping.
+
+                </p>
+
+                <nav class="shop-breadcrumb">
+
+                    <a href="../index.html">
+
+                        Home
+
+                    </a>
+
+                    <i class="fa-solid fa-angle-right"></i>
+
+                    <span>
+
+                        Shop
+
+                    </span>
+
+                </nav>
+
+            </div>
+
+            <div class="col-lg-5">
+
+                <div class="shop-banner-scene">
+
+                    <div class="banner-circle circle-1"></div>
+                    <div class="banner-circle circle-2"></div>
+
+                    <img
+                        class="banner-product product-1"
+                        src="../assets/images/hero/shoe.png"
+                        alt="Shoe">
+
+                    <img
+                        class="banner-product product-2"
+                        src="../assets/images/hero/watch.png"
+                        alt="Watch">
+
+                    <img
+                        class="banner-product product-3"
+                        src="../assets/images/hero/headphone.png"
+                        alt="Headphone">
+
+                </div>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -70,105 +137,90 @@
 
     <div class="container">
 
-        <div class="row mb-4">
+       <div class="row mb-4">
 
-            <div class="col-lg-4 mb-3">
+    <div class="col-lg-4 mb-3">
 
-                <input
-                    id="search-input"
-                    type="text"
-                    class="form-control"
-                    placeholder="Search products...">
+        <div class="premium-search">
 
-            </div>
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="col-lg-4 mb-3">
-
-                <select
-                    id="category-filter"
-                    class="form-select">
-
-                    <option value="All">
-
-                        All Categories
-
-                    </option>
-
-                    <option value="Shoes">
-
-                        Shoes
-
-                    </option>
-
-                    <option value="Watch">
-
-                        Watch
-
-                    </option>
-
-                    <option value="Electronics">
-
-                        Electronics
-
-                    </option>
-
-                    <option value="Phone">
-
-                        Phone
-
-                    </option>
-
-                    <option value="Bag">
-
-                        Bag
-
-                    </option>
-
-                </select>
-
-            </div>
-
-            <div class="col-lg-4 mb-3">
-
-                <select
-                    id="sort-filter"
-                    class="form-select">
-
-                    <option value="default">
-
-                        Sort By
-
-                    </option>
-
-                    <option value="low-high">
-
-                        Price Low to High
-
-                    </option>
-
-                    <option value="high-low">
-
-                        Price High to Low
-
-                    </option>
-
-                    <option value="a-z">
-
-                        Name A - Z
-
-                    </option>
-
-                    <option value="z-a">
-
-                        Name Z - A
-
-                    </option>
-
-                </select>
-
-            </div>
+            <input
+                id="search-input"
+                type="text"
+                class="form-control premium-input"
+                placeholder="Search premium products...">
 
         </div>
+
+    </div>
+
+    <div class="col-lg-4 mb-3">
+
+        <div class="premium-select">
+
+            <i class="fa-solid fa-layer-group"></i>
+
+            <select
+                id="category-filter"
+                class="form-select premium-input">
+
+                <option value="All">All Categories</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Watch">Watch</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Phone">Phone</option>
+                <option value="Bag">Bag</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+    <div class="col-lg-4 mb-3">
+
+        <div class="premium-select">
+
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+
+            <select
+                id="sort-filter"
+                class="form-select premium-input">
+
+                <option value="default">Sort By</option>
+                <option value="low-high">Price Low to High</option>
+                <option value="high-low">Price High to Low</option>
+                <option value="a-z">Name A - Z</option>
+                <option value="z-a">Name Z - A</option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div class="results-bar">
+
+    <div class="results-left">
+
+        <span id="results-count">
+
+            Showing 0 Products
+
+        </span>
+
+    </div>
+
+    <div
+        id="active-filters"
+        class="active-filters">
+
+    </div>
+
+</div>
 
         <div
             id="product-list"

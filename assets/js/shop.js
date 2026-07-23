@@ -166,98 +166,101 @@ function renderProducts(productArray) {
 
     productArray.forEach(product => {
 
-        productContainer.innerHTML += `
+       productContainer.innerHTML += `
 
-        <div class="col-lg-3 col-md-6">
+<div class="col-lg-3 col-md-6">
 
-            <div class="card product-card h-100 position-relative">
+    <div class="product-card premium-product-card h-100 position-relative tilt">
 
-                <button
-                    type="button"
-                    class="wishlist-btn position-absolute top-0 end-0 m-2"
+        <span class="product-badge">
 
-                    data-id="${product.id}"
+            NEW
 
-                    style="
+        </span>
 
-                        width:42px;
+        <button
+    type="button"
+    class="wishlist-btn"
+    data-id="${product.id}">
 
-                        height:42px;
+            <i class="${
+                isInWishlist(product.id)
+                ? "fas fa-heart text-danger"
+                : "far fa-heart"
+            }"></i>
 
-                        border:none;
+        </button>
 
-                        border-radius:50%;
+        <div class="product-image-wrapper">
 
-                        background:#fff;
+            <img
+                src="${product.image}"
+                class="card-img-top"
+                alt="${product.name}">
 
-                        box-shadow:0 3px 10px rgba(0,0,0,.12);
+            <div class="product-overlay">
 
-                        display:flex;
+                <a
+                    href="product.html?id=${product.id}"
+                    class="quick-view-btn">
 
-                        align-items:center;
+                    <i class="fa-solid fa-eye"></i>
 
-                        justify-content:center;
+                    Quick View
 
-                        z-index:100;
-
-                        cursor:pointer;
-
-                    ">
-
-                    <i class="${
-                        isInWishlist(product.id)
-                        ? "fas fa-heart text-danger"
-                        : "far fa-heart"
-                    }"></i>
-
-                </button>
-
-                <img
-                    src="${product.image}"
-                    class="card-img-top"
-                    alt="${product.name}">
-
-                <div class="card-body text-center">
-
-                    <h5 class="card-title">
-
-                        ${product.name}
-
-                    </h5>
-
-                    <p class="text-muted">
-
-                        $${product.price.toFixed(2)}
-
-                    </p>
-
-                    <div class="d-grid gap-2">
-
-                        <a
-                            href="product.html?id=${product.id}"
-                            class="btn btn-outline-primary">
-
-                            View Details
-
-                        </a>
-
-                        <button
-                            class="btn btn-primary add-cart-btn"
-                            data-id="${product.id}">
-
-                            Add to Cart
-
-                        </button>
-
-                    </div>
-
-                </div>
+                </a>
 
             </div>
 
         </div>
 
-        `;
+        <div class="card-body text-center">
+
+            <small class="product-category">
+
+                ${product.category}
+
+            </small>
+
+            <h5 class="card-title">
+
+                ${product.name}
+
+            </h5>
+
+            <div class="rating">
+
+                ★★★★★
+
+            </div>
+
+            <div class="price-row">
+
+                <span class="price">
+
+                    $${product.price.toFixed(2)}
+
+                </span>
+
+            </div>
+
+            <button
+                class="btn btn-primary add-cart-btn w-100"
+                data-id="${product.id}">
+
+                <i class="fa-solid fa-cart-shopping me-2"></i>
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+`;
 
     });
     document.querySelectorAll(".add-cart-btn").forEach(button => {
@@ -348,6 +351,15 @@ function filterProducts() {
     }
 
     renderProducts(filteredProducts);
+
+    const resultsCount = document.getElementById("results-count");
+
+if(resultsCount){
+
+    resultsCount.textContent =
+        `Showing ${filteredProducts.length} Product${filteredProducts.length !== 1 ? "s" : ""}`;
+
+}
 
 }
 
