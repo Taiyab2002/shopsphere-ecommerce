@@ -91,3 +91,4 @@ function showToast(type, title, message) {
     };
 
 }
+window.showToast = showToast;
